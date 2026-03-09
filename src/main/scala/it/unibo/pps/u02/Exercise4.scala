@@ -1,6 +1,7 @@
 package it.unibo.pps.u02
 
 object Exercise4 extends App:
+
   val p1: Int => Int => Int => Boolean = x => y => z => (x, y, z) match
     case (a, b, c) if a <= b && b == c => true
     case _ => false

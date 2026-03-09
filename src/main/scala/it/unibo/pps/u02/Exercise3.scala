@@ -1,6 +1,7 @@
 package it.unibo.pps.u02
 
 object Exercise3 extends App:
+
   val sign: Int => String = _ match
     case n if n >= 0 => "positive"
     case _ => "negative"

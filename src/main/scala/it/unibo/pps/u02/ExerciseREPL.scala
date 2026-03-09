@@ -1,6 +1,7 @@
 package it.unibo.pps.u02
 
 object ExerciseREPL extends App:
+
   def divide(x: Double, y: Double) = (x, y) match
     case (_, 0) => "Error: division by 0"
     case _ => x / y

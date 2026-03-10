@@ -19,6 +19,15 @@ object Optionals:
       case Just(a) => a
       case _       => orElse
 
+    def mapInt(opt: OptionalInt)(f: Int => Int): OptionalInt = opt match
+      case Just(a) => Just(f(a))
+      case _       => Empty()
+
+    def filter(opt: OptionalInt)(f: Int => Boolean): OptionalInt = opt match
+      case Just(a) if f(a) => Just(a)
+      case _               => Empty()
+
+
 @main def tryOptionals(): Unit =
   import Optionals.* // to work with Optionals (to see OptionalInt type)
   import OptionalInt.* // to directly access algorithms

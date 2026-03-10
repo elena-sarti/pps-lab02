@@ -11,8 +11,8 @@ object Exercise3 extends App:
     case _           => "negative"
 
   val neg: (String => Boolean) => String => Boolean = f => a => f(a) match
-    case n if n => false
-    case _      => true
+    case true => false
+    case _    => true
 
   val empty: String => Boolean = _ == "" // predicate on strings
   val notEmpty = neg(empty) // which type of notEmpty?
@@ -21,8 +21,8 @@ object Exercise3 extends App:
   println(notEmpty("foo") && !notEmpty(""))
 
   def neg2(f: String => Boolean)(a: String): Boolean = f(a) match
-    case n if n => false
-    case _      => true
+    case true => false
+    case _    => true
 
   val empty1: String => Boolean = _ == "" // predicate on strings
   val notEmpty1 = neg2(empty) // which type of notEmpty?

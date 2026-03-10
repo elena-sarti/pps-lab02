@@ -4,11 +4,11 @@ object ExerciseREPL extends App:
 
   def divide(x: Double, y: Double): Double = (x, y) match
     case (_, 0) => throw new ArithmeticException("Error: division by 0")
-    case _ => x / y
+    case _      => x / y
 
   def divideCurried(x: Double)(y: Double): Double = (x, y) match
     case (_, 0) => throw new ArithmeticException("Error: division by 0")
-    case _ => x / y
+    case _      => x / y
 
   println(divide(3, 4)) // 0.75
   println(divide(3, 0)) // Error: division by 0
@@ -23,7 +23,7 @@ object ExerciseREPL extends App:
 
   val curriedDivAsFunction: Double => Double => Double = x => y => (x, y) match
     case (_, 0) => throw new ArithmeticException("Error: division by 0")
-    case _ => x / y
+    case _      => x / y
 
   println(curriedDivAsFunction(2)(3)) // 0.6666666666666666
   println(curriedDivAsFunction(2)(0)) // Error: division by 0

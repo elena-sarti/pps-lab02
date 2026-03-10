@@ -2,12 +2,12 @@ package it.unibo.pps.u02
 
 object ExerciseREPL extends App:
 
-  def divide(x: Double, y: Double) = (x, y) match
-    case (_, 0) => "Error: division by 0"
+  def divide(x: Double, y: Double): Double = (x, y) match
+    case (_, 0) => throw new ArithmeticException("Error: division by 0")
     case _ => x / y
 
-  def divideCurried(x: Double)(y: Double) = (x, y) match
-    case (_, 0) => "Error: division by 0"
+  def divideCurried(x: Double)(y: Double): Double = (x, y) match
+    case (_, 0) => throw new ArithmeticException("Error: division by 0")
     case _ => x / y
 
   println(divide(3, 4)) // 0.75
@@ -21,8 +21,8 @@ object ExerciseREPL extends App:
   println(half(4)) //2
   println(half) // rs$line$48$$$Lambda$2261/0x0000025db26cdf90@41b40d93
 
-  val curriedDivAsFunction = (x: Double) => (y: Double) => (x, y) match
-    case (_, 0) => "Error: division by 0"
+  val curriedDivAsFunction: Double => Double => Double = x => y => (x, y) match
+    case (_, 0) => throw new ArithmeticException("Error: division by 0")
     case _ => x / y
 
   println(curriedDivAsFunction(2)(3)) // 0.6666666666666666

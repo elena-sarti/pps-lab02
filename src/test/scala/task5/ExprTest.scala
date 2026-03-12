@@ -2,8 +2,7 @@ package task5
 
 import org.junit.Assert.*
 import org.junit.Test
-import it.unibo.pps.u02.Exercise8.*
-import it.unibo.pps.u02.Exercise8.Expr.Literal
+import it.unibo.pps.u02.Lab2.Exercise8.*
 
 class ExprTest:
   @Test def testEvaluateLiteral(): Unit =
@@ -26,7 +25,7 @@ class ExprTest:
     assertEquals(expectedMult, Expr.evaluate(multExpr))
 
   @Test def testShow(): Unit =
-    val expectedString = s"(( ${5} + ${10} ) * ( ${5} + ${10} ))"
+    val expectedString = s"( ( ${5} + ${10} ) * ( ${5} + ${10} ) )"
     val expr1 = Expr.Literal(5)
     val expr2 = Expr.Literal(10)
     val sumExpr = Expr.Add(expr1, expr2)
